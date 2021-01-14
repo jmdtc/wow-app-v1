@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector, useDispatch } from 'react-redux'
-import { setCounter, selectCounter } from "../slices/counter"
+import { setCounter, selectCounter, CounterActions } from "../slices/counter"
 
 export const ReduxCounter: React.FC = () => {
     const dispatch = useDispatch()
@@ -15,11 +15,11 @@ export const ReduxCounter: React.FC = () => {
             </div>
             <div className="flex flex-row justify-between w-full">
                 <button
-                    onClick={() => dispatch(setCounter("decrement"))}
+                    onClick={() => dispatch(setCounter(CounterActions.DECREMENT))}
                     className="w-1/2 border border-gray-400"
                 >-</button>
                 <button
-                    onClick={() => dispatch(setCounter("increment"))}
+                    onClick={() => dispatch(setCounter(CounterActions.INCREMENT))}
                     className="w-1/2 border border-gray-400"
                 >+</button>
             </div>

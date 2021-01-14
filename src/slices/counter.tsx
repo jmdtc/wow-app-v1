@@ -4,6 +4,11 @@ interface StateType {
     value: number;
 };
 
+export enum CounterActions {
+    INCREMENT = 1,
+    DECREMENT = -1
+};
+
 const counterSlice = createSlice({
     name: "counter",
     initialState: {
@@ -11,9 +16,7 @@ const counterSlice = createSlice({
     } as StateType,
     reducers: {
         setCounter: (state, action) => {
-            action.payload === "increment" ?
-                state.value++ :
-                state.value--
+            state.value += action.payload
         }
     }
 })
