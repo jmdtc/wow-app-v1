@@ -6,6 +6,9 @@ import store from './store/store';
 
 test('renders learn react link', () => {
   render(<Provider store={store}><App /></Provider>);
-  const linkElement = screen.getByText(/React State Counter/i);
-  expect(linkElement).toBeInTheDocument();
+  const reactStateCounter = screen.getByText(/React State Counter/i);
+  expect(reactStateCounter).toBeInTheDocument();
+
+  const reduxCounter = screen.getByText(/Redux Counter/i);
+  expect(reduxCounter).toBeInTheDocument();
 });
