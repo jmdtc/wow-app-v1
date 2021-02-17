@@ -6,7 +6,7 @@ import {
 } from "react"
 
 import Item from "./Item"
-import PictureItem from "./PictureItem"
+import PictureItem from "./IconItem"
 
 type SideBarCompositionType = {
     Item: typeof Item;

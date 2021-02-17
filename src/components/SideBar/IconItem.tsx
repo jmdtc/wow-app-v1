@@ -1,14 +1,14 @@
 import { FC } from "react"
 
-interface PictureItemProps {
+interface IconItemProps {
     children: string;
     imgSrc: string;
     className?: string;
 }
 
-const PictureItem: FC<PictureItemProps> = ({ children, imgSrc, className }) => {
+const IconItem: FC<IconItemProps> = ({ children, imgSrc, className }) => {
     return (
-        <div className={"flex items-center " + className}>
+        <div className={`flex items-center ${className}`}>
             <img
                 src={imgSrc}
                 className="h-avatar mr-2"
@@ -20,6 +20,6 @@ const PictureItem: FC<PictureItemProps> = ({ children, imgSrc, className }) => {
 }
 
 
-PictureItem.displayName = "SideBar.PictureItem";
+IconItem.displayName = "SideBar.IconItem";
 
-export default PictureItem
+export default IconItem
