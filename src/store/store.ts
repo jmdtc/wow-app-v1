@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-import counterReducer from "../slices/counter"
+import pagesReducer from "../slices/pages"
 
 export default configureStore({
   reducer: {
-    counter: counterReducer
+    pages: pagesReducer
   }
 })
 
