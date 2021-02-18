@@ -21,7 +21,9 @@ const AppLayout: FC<LayoutProps> = ({ pages }) => {
                     </SideBar.Item>
                 ))}
             </SideBar.Container>
-            <Main></Main>
+            <Main>
+                <h1>Salut</h1>
+            </Main>
         </div>
     )
 }
