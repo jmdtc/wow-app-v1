@@ -19,7 +19,7 @@ yarn start
       - Container - styling for the whole SideBar, also extends items to apply shared styles
       - Item - normal text only button
       - IconItem - button with text and icon
-  - /slices - redux toolkit files, one for each feature. Basically each slice describe the frontend logic in each part of the application. See redux toolkit documentation as slices implement different concepts such as actions, reducers, selectors and also implement type definitions for 
+  - /slices - redux toolkit files, one for each feature. Basically each slice describe the frontend logic in each part of the application. See redux toolkit documentation as slices implement different concepts such as actions, reducers, selectors and also implement type definitions for this part of the state main
   - /store - redux central state made of the different reducers
   - /pages - speaks for itself he
   - /styles - just the outdir for tailwind
