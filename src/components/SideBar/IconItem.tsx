@@ -1,7 +1,7 @@
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 
 interface IconItemProps {
-    children: string;
+    children: ReactNode;
     imgSrc: string;
     className?: string;
 }
