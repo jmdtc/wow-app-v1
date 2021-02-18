@@ -1,9 +1,13 @@
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 
-const Main: FC = () => {
+interface MainProps {
+    children?: ReactNode;
+}
+
+const Main: FC<MainProps> = ({children}) => {
     return (
-        <div className="overflow-auto w-full">
-            coucou
+        <div className="ml-56 overflow-auto py-8 px-4">
+            {children}
         </div>
     )
 }

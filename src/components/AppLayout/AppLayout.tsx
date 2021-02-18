@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const AppLayout: FC<LayoutProps> = ({ pages }) => {
     return (
-        <div className="flex">
+        <div>
             <SideBar.Container>
                 <SideBar.IconItem
                     imgSrc="https://img.rankedboost.com/wp-content/uploads/2019/05/WoW-Classic-Druid-Guide.png"
@@ -21,7 +21,7 @@ const AppLayout: FC<LayoutProps> = ({ pages }) => {
                     </SideBar.Item>
                 ))}
             </SideBar.Container>
-            <Main />
+            <Main></Main>
         </div>
     )
 }

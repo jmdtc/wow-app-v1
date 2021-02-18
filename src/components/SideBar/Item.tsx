@@ -1,7 +1,7 @@
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 
 interface ItemProps {
-    children: string;
+    children: ReactNode;
     className?: string;
 }
 
