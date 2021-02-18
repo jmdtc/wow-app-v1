@@ -8,7 +8,7 @@ interface ItemProps {
 const Item: FC<ItemProps> = ({ children, className }) => {
     return (
         <div className={className}>
-            {children}
+            <span>{children}</span>
         </div>
     )
 }

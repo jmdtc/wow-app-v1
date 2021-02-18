@@ -1,12 +1,13 @@
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import SideBar from "../SideBar"
 import Main from "../Main"
 
 interface LayoutProps {
     pages: string[];
+    activePage: ReactNode;
 }
 
-const AppLayout: FC<LayoutProps> = ({ pages }) => {
+const AppLayout: FC<LayoutProps> = ({ pages, activePage }) => {
     return (
         <div>
             <SideBar.Container>
@@ -22,7 +23,7 @@ const AppLayout: FC<LayoutProps> = ({ pages }) => {
                 ))}
             </SideBar.Container>
             <Main>
-                <h1>Salut</h1>
+                {activePage}
             </Main>
         </div>
     )
