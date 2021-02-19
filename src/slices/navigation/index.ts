@@ -67,8 +67,9 @@ const pagesSlice = createSlice({
             state.activePage = action.payload
         },
         setActiveTab: (state: StateType, action: ActiveTabActionPayload) => {
-            state[action.payload.page] = {
-                value: action.payload.value
+            const { page, value } = action.payload
+            state[page] = {
+                activeTab: value
             }
         }
     }

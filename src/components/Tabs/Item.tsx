@@ -4,6 +4,7 @@ interface ItemProps {
     children: ReactNode;
     active?: boolean;
     disabled?: boolean;
+    onClick?: () => void;
 }
 
 const computeClassName = function (
@@ -20,11 +21,11 @@ const computeClassName = function (
     return `${baseClasses} ${selectableClasses}`
 }
 
-const Item: FC<ItemProps> = ({ children, active, disabled = false }) => {
+const Item: FC<ItemProps> = ({ children, active, disabled = false, onClick }) => {
     const computedClassName = computeClassName(active, disabled)
 
     return (
-        <div className={computedClassName}>
+        <div className={computedClassName} onClick={onClick}>
             <span className="inline-flex items-center">{children}</span>
         </div>
     )

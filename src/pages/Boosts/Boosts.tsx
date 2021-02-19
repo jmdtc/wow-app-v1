@@ -1,5 +1,5 @@
 import { FC, useMemo } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 
 import Tabs from "../../components/Tabs"
 
@@ -7,14 +7,13 @@ import { RootState } from "../../store/store"
 import {
     PageActions,
     BoostsTabsActions,
-    setActiveTab,
     selectActiveTabByPage
 } from "../../slices/navigation"
 
 const Boosts: FC = () => {
     const { BOOSTS } = PageActions
     const { RAIDS, ARENAS } = BoostsTabsActions
-    
+
     const tabs = Object.values(BoostsTabsActions)
     const selectActiveTab = useMemo(
         selectActiveTabByPage,

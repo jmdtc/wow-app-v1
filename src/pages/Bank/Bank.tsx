@@ -12,8 +12,9 @@ import {
 } from "../../slices/navigation"
 
 const Bank: FC = () => {
-    const { BANK } = PageActions
-    
+    const dispatch = useDispatch()
+    const { BANK } = PageActions
+
     const tabs = Object.values(BankTabsActions)
     const selectActiveTab = useMemo(
         selectActiveTabByPage,
@@ -26,9 +27,14 @@ const Bank: FC = () => {
     return (
         <div className="">
             <Tabs.Container value={activeTab}>
-                {tabs.map(tab => {
-                    return <Tabs.Item key={tab}>{tab}</Tabs.Item>
-                })}
+                {tabs.map(tab => (
+                    <Tabs.Item
+                        key={tab}
+                        onClick={() => dispatch(setActiveTab({page: BANK, value: tab}))}
+                    >
+                        {tab}
+                    </Tabs.Item>
+                ))}
             </Tabs.Container>
         </div>
     )

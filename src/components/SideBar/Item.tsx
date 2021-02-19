@@ -3,7 +3,7 @@ import { FC, ReactNode } from "react"
 export interface ItemProps {
     children: ReactNode;
     className?: string;
-    onClick?: () => void;
+    onClick: () => void;
 }
 
 const Item: FC<ItemProps> = ({ children, className, onClick }) => {

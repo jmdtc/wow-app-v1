@@ -12,8 +12,9 @@ import {
 } from "../../slices/navigation"
 
 const Roster: FC = () => {
-    const { ROSTER } = PageActions
-    
+    const dispatch = useDispatch()
+    const { ROSTER } = PageActions
+
     const tabs = Object.values(RosterTabsActions)
     const selectActiveTab = useMemo(
         selectActiveTabByPage,
@@ -26,9 +27,14 @@ const Roster: FC = () => {
     return (
         <div className="">
             <Tabs.Container value={activeTab}>
-                {tabs.map(tab => {
-                    return <Tabs.Item key={tab}>{tab}</Tabs.Item>
-                })}
+                {tabs.map(tab => (
+                    <Tabs.Item
+                        key={tab}
+                        onClick={() => dispatch(setActiveTab({page: ROSTER, value: tab}))}
+                    >
+                        {tab}
+                    </Tabs.Item>
+                ))}
             </Tabs.Container>
         </div>
     )
