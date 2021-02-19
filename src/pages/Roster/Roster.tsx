@@ -6,29 +6,27 @@ import Tabs from "../../components/Tabs"
 import { RootState } from "../../store/store"
 import {
     PageActions,
-    BoostsTabsActions,
+    RosterTabsActions,
     setActiveTab,
     selectActiveTabByPage
 } from "../../slices/navigation"
 
-const Boosts: FC = () => {
-    const { BOOSTS } = PageActions
-    const { RAIDS, ARENAS } = BoostsTabsActions
+const Roster: FC = () => {
+    const { ROSTER } = PageActions
     
-    const tabs = Object.values(BoostsTabsActions)
+    const tabs = Object.values(RosterTabsActions)
     const selectActiveTab = useMemo(
         selectActiveTabByPage,
         []
     )
     const activeTab = useSelector((state: RootState) =>
-        selectActiveTab(state, BOOSTS)
+        selectActiveTab(state, ROSTER)
     )
 
     return (
         <div className="">
             <Tabs.Container value={activeTab}>
                 {tabs.map(tab => {
-                    if (tab === RAIDS || tab === ARENAS) return <Tabs.Item key={tab} disabled>{tab}</Tabs.Item>
                     return <Tabs.Item key={tab}>{tab}</Tabs.Item>
                 })}
             </Tabs.Container>
@@ -36,4 +34,4 @@ const Boosts: FC = () => {
     )
 }
 
-export default Boosts
+export default Roster

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit"
-import pagesReducer from "../slices/pages"
+import navigationReducer from "../slices/navigation"
 
-export default configureStore({
+const store = configureStore({
   reducer: {
-    pages: pagesReducer
+    navigation: navigationReducer
   }
 })
+export default store
 
+export type RootState = ReturnType<typeof store.getState>

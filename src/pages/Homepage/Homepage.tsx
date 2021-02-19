@@ -1,11 +1,9 @@
 import { FC } from "react"
 
-//import Tabs from "../../components/Tabs"
-
 const Homepage: FC = () => {
     return (
         <div className="">
-            <h1>COucou</h1>
+            <h1>This is your homepage</h1>
         </div>
     )
 }

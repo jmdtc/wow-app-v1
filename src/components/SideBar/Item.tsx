@@ -1,13 +1,14 @@
 import { FC, ReactNode } from "react"
 
-interface ItemProps {
+export interface ItemProps {
     children: ReactNode;
     className?: string;
+    onClick?: () => void;
 }
 
-const Item: FC<ItemProps> = ({ children, className }) => {
+const Item: FC<ItemProps> = ({ children, className, onClick }) => {
     return (
-        <div className={className}>
+        <div className={className} onClick={onClick}>
             <span>{children}</span>
         </div>
     )
