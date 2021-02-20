@@ -25,6 +25,15 @@ yarn start
   - /styles - just the outdir for tailwind
 - /public - static files
 
+## Rules of import
+Each category of import should be separated by a line-break and imported in this order
+- node_modules - with React on top
+- pages - should be only in App.tsx
+- components
+- slices - and their different submodules
+- utils, custom hooks
+- css - should be only on App.tsx as well
+
 ## React notions to know
 - FC - is just a type for React component created with a function. The other React type of component is made through classes (it's shit).
 - Dot notation

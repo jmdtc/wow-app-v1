@@ -15,7 +15,7 @@ type SideBarCompositionType = {
 
 const Container: FC & SideBarCompositionType = ({ children }) => {
     return (
-        <div className="fixed h-screen w-56 bg-indigo-500 text-white font-semibold pt-2">
+        <div className="fixed h-screen w-56 bg-indigo-500 text-white capitalize font-semibold pt-2">
             {Children.map(children, child => {
                 if (isValidElement(child)) {
                     return cloneElement(child, {

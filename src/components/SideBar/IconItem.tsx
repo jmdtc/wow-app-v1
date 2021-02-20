@@ -1,14 +1,14 @@
-import { FC, ReactNode } from "react"
+import { FC } from "react"
 
-interface IconItemProps {
-    children: ReactNode;
+import { ItemProps } from "./Item"
+
+interface IconItemProps extends ItemProps {
     imgSrc: string;
-    className?: string;
 }
 
-const IconItem: FC<IconItemProps> = ({ children, imgSrc, className }) => {
+const IconItem: FC<IconItemProps> = ({ children, imgSrc, className, onClick }) => {
     return (
-        <div className={`flex items-center ${className}`}>
+        <div className={`flex items-center ${className}`} onClick={onClick}>
             <img
                 src={imgSrc}
                 className="h-avatar mr-2"
