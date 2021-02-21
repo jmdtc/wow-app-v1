@@ -25,17 +25,23 @@ const Roster: FC = () => {
     )
 
     return (
-        <div className="">
-            <Tabs.Container value={activeTab}>
-                {tabs.map(tab => (
-                    <Tabs.Item
-                        key={tab}
-                        onClick={() => dispatch(setActiveTab({page: ROSTER, value: tab}))}
-                    >
-                        {tab}
-                    </Tabs.Item>
-                ))}
-            </Tabs.Container>
+        <div>
+            <div className="-mt-8 -ml-4">
+                <Tabs.Container value={activeTab}>
+                    {tabs.map(tab => (
+                        <Tabs.Item
+                            key={tab}
+                            onClick={() => dispatch(setActiveTab({ page: ROSTER, value: tab }))}
+                        >
+                            {tab}
+                        </Tabs.Item>
+                    ))}
+                </Tabs.Container>
+            </div>
+
+            <div className="mt-8">
+                test
+            </div>
         </div>
     )
 }
