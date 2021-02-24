@@ -8,8 +8,8 @@ export interface ItemProps {
 
 const Item: FC<ItemProps> = ({ children, className, onClick }) => {
     return (
-        <div className={className} onClick={onClick}>
-            <span>{children}</span>
+        <div className={className + " items-center"} onClick={onClick}>
+            {children}
         </div>
     )
 }

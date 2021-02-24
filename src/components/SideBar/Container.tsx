@@ -2,24 +2,37 @@ import {
     FC,
     Children,
     isValidElement,
-    cloneElement
+    cloneElement,
 } from "react"
 
 import Item from "./Item"
-import PictureItem from "./IconItem"
+import ImageItem from "./ImageItem"
 
 type SideBarCompositionType = {
     Item: typeof Item;
-    PictureItem: typeof PictureItem;
+    ImageItem: typeof ImageItem;
 }
 
-const Container: FC & SideBarCompositionType = ({ children }) => {
+interface ContainerProps {
+    selectedPage: string;
+}
+
+const Container: FC<ContainerProps> & SideBarCompositionType = ({ children, selectedPage }) => {    
+    const commonClasses = "flex items-center cursor-pointer p-2 my-4 rounded-md truncate"
+    const nonSelected = "hover:bg-indigo-600"
+    const selectedPageClassName = "bg-indigo-700 font-semibold"
+    
     return (
-        <div className="fixed h-screen w-56 bg-indigo-500 text-white capitalize font-semibold pt-2">
+        <div className="fixed h-screen w-56 pt-2 px-4 bg-indigo-500 text-white capitalize">
             {Children.map(children, child => {
+                if (isValidElement(child) && child.key === selectedPage) {
+                    return cloneElement(child, {
+                        className: `${commonClasses} ${selectedPageClassName}`,
+                    })
+                }
                 if (isValidElement(child)) {
                     return cloneElement(child, {
-                        className: "cursor-pointer hover:bg-indigo-700 p-4 truncate"
+                        className: `${commonClasses} ${nonSelected}`,
                     })
                 }
                 return child
@@ -29,6 +42,6 @@ const Container: FC & SideBarCompositionType = ({ children }) => {
 }
 
 Container.Item = Item;
-Container.PictureItem = PictureItem;
+Container.ImageItem = ImageItem;
 
 export default Container

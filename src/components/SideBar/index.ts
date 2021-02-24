@@ -1,7 +1,7 @@
 import Item from "./Item"
 import Container from "./Container"
-import IconItem from "./IconItem"
+import ImageItem from "./ImageItem"
 
-const SideBar = { Item, Container, IconItem }
+const SideBar = { Item, Container, ImageItem }
 
 export default SideBar

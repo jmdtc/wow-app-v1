@@ -38,6 +38,7 @@ const App: React.FC = () => {
         <div className="h-screen box-border">
             <AppLayout
                 pages={PageActions}
+                activePageName={activePageName}
                 activePage={instantiatePageComponent(activePageName)}
             />
         </div>
