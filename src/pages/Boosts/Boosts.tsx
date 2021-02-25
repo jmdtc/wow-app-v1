@@ -1,6 +1,7 @@
 import { FC, useMemo } from "react"
 import { useSelector } from "react-redux"
 
+import PageLayout from "../../components/PageLayout"
 import Tabs from "../../components/Tabs"
 
 import { RootState } from "../../store/store"
@@ -24,20 +25,19 @@ const Boosts: FC = () => {
     )
 
     return (
-        <div>
-            <div className="-mt-8 -ml-4">
-                <Tabs.Container value={activeTab}>
+        <PageLayout.Container>
+            <PageLayout.Tabs>
+            <Tabs.Container value={activeTab}>
                     {tabs.map(tab => {
                         if (tab === RAIDS || tab === ARENAS) return <Tabs.Item key={tab} disabled>{tab}</Tabs.Item>
                         return <Tabs.Item key={tab}>{tab}</Tabs.Item>
                     })}
                 </Tabs.Container>
-            </div>
-
-            <div className="mt-8">
+            </PageLayout.Tabs>
+            <PageLayout.Content>
                 test
-            </div>
-        </div>
+            </PageLayout.Content>
+        </PageLayout.Container>
     )
 }
 

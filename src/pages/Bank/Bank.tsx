@@ -1,6 +1,7 @@
 import { FC, useMemo } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
+import PageLayout from "../../components/PageLayout"
 import Tabs from "../../components/Tabs"
 
 import { RootState } from "../../store/store"
@@ -25,8 +26,8 @@ const Bank: FC = () => {
     )
 
     return (
-        <div>
-            <div className="-mt-8 -ml-4">
+        <PageLayout.Container>
+            <PageLayout.Tabs>
                 <Tabs.Container value={activeTab}>
                     {tabs.map(tab => (
                         <Tabs.Item
@@ -37,12 +38,11 @@ const Bank: FC = () => {
                         </Tabs.Item>
                     ))}
                 </Tabs.Container>
-            </div>
-
-            <div className="mt-8">
+            </PageLayout.Tabs>
+            <PageLayout.Content>
                 test
-            </div>
-        </div>
+            </PageLayout.Content>
+        </PageLayout.Container>
     )
 }
 
