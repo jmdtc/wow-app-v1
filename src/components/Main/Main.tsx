@@ -6,7 +6,7 @@ interface MainProps {
 
 const Main: FC<MainProps> = ({ children }) => {
     return (
-        <div className="ml-56 overflow-auto py-8 px-4">
+        <div className="relative ml-56 overflow-auto min-h-screen py-8 px-4">
             {children}
         </div>
     )

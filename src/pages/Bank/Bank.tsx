@@ -1,6 +1,7 @@
 import { FC, useMemo } from "react"
 import { useDispatch, useSelector } from "react-redux"
 
+import PageLayout from "../../components/PageLayout"
 import Tabs from "../../components/Tabs"
 
 import { RootState } from "../../store/store"
@@ -25,18 +26,23 @@ const Bank: FC = () => {
     )
 
     return (
-        <div className="">
-            <Tabs.Container value={activeTab}>
-                {tabs.map(tab => (
-                    <Tabs.Item
-                        key={tab}
-                        onClick={() => dispatch(setActiveTab({page: BANK, value: tab}))}
-                    >
-                        {tab}
-                    </Tabs.Item>
-                ))}
-            </Tabs.Container>
-        </div>
+        <PageLayout.Container>
+            <PageLayout.Tabs>
+                <Tabs.Container value={activeTab}>
+                    {tabs.map(tab => (
+                        <Tabs.Item
+                            key={tab}
+                            onClick={() => dispatch(setActiveTab({ page: BANK, value: tab }))}
+                        >
+                            {tab}
+                        </Tabs.Item>
+                    ))}
+                </Tabs.Container>
+            </PageLayout.Tabs>
+            <PageLayout.Content>
+                test
+            </PageLayout.Content>
+        </PageLayout.Container>
     )
 }
 

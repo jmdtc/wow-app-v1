@@ -3,11 +3,9 @@ module.exports = {
   darkMode: false, // or "media" or "class"
   theme: {
     extend: {
-      height: {
-        "avatar": "2rem",
-      },
       width: {
-        "tab": "160px"
+        "tab": "160px",
+        "sidebar-icon": "1.5rem",
       }
     },
   },
